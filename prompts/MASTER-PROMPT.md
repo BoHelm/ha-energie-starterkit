@@ -2,9 +2,11 @@
 
 Diesen Text zusammen mit der ausgefüllten **privaten** Anlagenbeschreibung in einem eigenen lokalen KI-Projekt verwenden. Eckige Platzhalter und ungeklärte `null`-Werte sind Rückfragen, keine gültigen Messdaten. Du kannst Hersteller, Wechselrichter, Batteriegröße, Messgeräte, WP und Wetterstation in der Anlagenbeschreibung austauschen. Das Kit selbst enthält keine persönlichen Werte.
 
+**Wichtig für den Nachbau:** Der Prompt ist der Einstieg in ein mehrteiliges Pflichtenheft. Lade das vollständige Repository herunter und stelle der KI den gesamten Ordner bereit. Nur diesen Text ohne die verlinkten Fachdateien einzufügen reicht für den spezifizierten Nachbau nicht aus. Die [Referenzarchitektur](../docs/10-referenzarchitektur.md) legt Bausteine, Datenverträge, Zustandsautomaten, Karten und Abnahmen fest. Das Ergebnis soll funktional gleichartig und an die Zielanlage angepasst sein; identischer Quellcode oder identische Darstellung werden nicht zugesichert.
+
 ---
 
-Du unterstützt mich beim Aufbau einer zuverlässigen, verständlichen Home-Assistant-Energieauswertung. Arbeite auf Deutsch. Lies zuerst `AGENTS.md`, meine private Anlagenbeschreibung und die Modul-/Rechen-/Datenqualitätsdokumente dieses Starterkits. Erhalte bestehende Konfiguration und ergänze gezielt. Das Ziel ist eine an meine Anlage angepasste Implementierung, keine wörtliche Installation einer fremden Hauskonfiguration.
+Du unterstützt mich beim Aufbau einer zuverlässigen, verständlichen Home-Assistant-Energieauswertung. Arbeite auf Deutsch. Lies zuerst `AGENTS.md`, meine private Anlagenbeschreibung und alle zehn Fachdateien im Ordner `docs`, insbesondere `docs/03-module.md`, `docs/04-berechnungen.md`, `docs/05-datenqualitaet.md`, `docs/06-abnahme.md` und `docs/10-referenzarchitektur.md`. Prüfe vor Beginn, ob du diese Dateien tatsächlich lesen konntest. Wenn sie nicht bereitgestellt sind, nenne die fehlenden Dateien und beschaffe sie aus dem freigegebenen Repository; ersetze fehlende Spezifikation nicht durch frei erfundene Details. Erhalte bestehende Konfiguration und ergänze gezielt. Das Ziel ist eine an meine Anlage angepasste Implementierung, keine wörtliche Installation einer fremden Hauskonfiguration.
 
 ## 1. Arbeitsauftrag und Ergebnis
 
@@ -107,5 +109,33 @@ Arbeite in überprüfbaren Modulen, nicht als großer unkontrollierter Austausch
 Verwende den gesamten Katalog `docs/06-abnahme.md`: Datenlücke, echteNull, veralteter/restaurierter Wert, Einheiten-/Faktorwechsel, Zählerrücksprung, fehlende Tagesgrenze, Neustart, verpasster Lauf, Sommerzeit, Jahreswechsel, Startteilmonat, Doppelausführung und doppelter Verlustfaktor. Bestehende Schutzfunktionen unverändert nachweisen. Für Sicherungen Rücklesen und später unabhängige Restoreprobe unterscheiden.
 
 Pflege private Projektdateien mit Datum, Zweck, Dateien, Entitätsrollen, Formel, Einheit, Annahme, Datenbeginn und Prüfergebnis. Öffentliche Dokumentation ausschließlich neutral. Am Ende: was funktioniert live, welche Dateien geändert wurden, welche Tests bestanden und was noch unbestätigt ist. Keine Erfolgsmeldung allein aufgrund einer Absicht, eines Klicks, einer gespeicherten Datei oder eines grünen Symbols.
+
+## 13. Verbindlicher Umsetzungsplan und Schnittstellen
+
+Erstelle zuerst eine Funktionsmatrix nach der Referenzarchitektur: je Modul Auswahl, Quellnachweis, Implementierung, Fachtest, Liveprüfung und offene Grenzen. Ein Häkchen bei „Datei gespeichert“ ist kein Häkchen bei „funktioniert“. Ohne echte gemeinsame vollständige Monatsdaten bleibt eine Monatsauswertung bis zum ersten vollen Monat leer, obwohl ihre Software bereits implementiert sein kann.
+
+Trenne Quellenadapter, Qualitätsprüfung, persistente Tagesfakten, Geld-/CO₂e-Bewertung, Forecast und Darstellung in überprüfbare Bausteine. Ein Chart darf nicht nebenbei Tagesdaten buchen. Erzeuge keine zweite Gesamt-PV-Quelle, wenn die vorhandene Summe dieselben Zweige enthält. Erhalte Quellzeit und Empfangszeit getrennt; unbekannte Quellzeit nicht erfinden.
+
+Plane für jede Messrolle Wert/Zahl-oder-null, Einheit, Zeit, Richtung und Qualitätsgrund. Tagesfakten enthalten lokalen Tag, eindeutige Grenzen, Energien je disjunkter Quelle, Originalprognose und Qualitätsnachweis. Bewertungen referenzieren Fakten und Modellversion. Zeige in einer Methodenansicht, welche Menge brutto und welche bereits einmal mit dem Nutzfaktor bewertet ist.
+
+Entwirf atomare Persistenz mit Schema-/Versionskennung, Sperre gegen Parallelaufrufe und wiederholbarem Tagesabschluss. Nach Neustart dieselbe Datenbasis und keine doppelten Kosten. Eine Parameteränderung darf dieselben Rohfakten neu bewerten, aber weder neue Tagesenergie erfinden noch eine zweite Buchung verursachen. Korrekturen mit Vorversion/Grund dokumentieren. Ungeprüfte Altwerte bleiben als Altbestand erkennbar.
+
+## 14. Präzise Bedien- und Rechenfälle
+
+Liefere die Ansichten aus der Referenzarchitektur: Leistung, Energie, Solarprognose, Anlagenparameter, Tablet, Kosten-/CO₂e-Burndown und Wärmepumpe; Anlagenzustand und Ortsnetz nach Auswahl. Übernimm Funktionen und Bedienfälle, nicht private Original-URLs oder Gerätekennungen. Ergebnisse stehen auf dem Handy vor Erläuterungen; Datum/Jahr bleiben während Aktualisierung erhalten. Ein-/ausblendbare Tabletmenüs haben einen funktionierenden Rückweg.
+
+Prognoseablauf: fehlender Snapshot, gespeicherter Original-Snapshot, laufender Tag, Abschluss ausstehend, abgeschlossen oder unbelegbar. Ein tatsächlich gültiger Energietag kann ohne Originalprognose dennoch gültige Energie haben; sperre dann den Prozentvergleich und nicht die unabhängige Energieanzeige.7-/31-Tage-Mittel haben getrennte Fenster und gemeinsame gültige Vergleichstage. Prozentzahl mit F0 bleibt leer; absolute Tagesabweichung darf sich nicht durch Vorzeichen aufheben.
+
+Löse die Doppelzählung im Kosten-/CO₂e-Modell durch ein ausdrückliches Referenzszenario. Wenn WP-/BEV-Strom zunächst voll zum gleichen Referenz-Strompreis belastet wird, darf der zugeordnete Solarstrom nicht zusätzlich innerhalb der WP-/BEV-Komponente kostenlos gemacht und zugleich als volle PV-Ersparnis gutgeschrieben werden. Vor Umsetzung anhand eines gemeinsamen synthetischen Tages alle Teilbeiträge zur Portfolio-Gesamtersparnis abstimmen. Eine andere Gegenfaktualbilanz ist zulässig, muss aber konsistent umgesetzt und erklärt sein.
+
+Ordne Preisquellen bei optionaler API zu: gültige frische API, gültiges datiertes Journal, bewusster manueller Ersatz. Herkunft und Alter anzeigen. Historische Perioden nicht rückwirkend zum heutigen Preis rechnen. Historische Pauschalphase und tägliche Messphase ohne Überlappung verbinden; der Komponentenvergleich verwendet nur den gemeinsamen täglich belegten Beginn. Signierte oder negative Beiträge nicht in irreführende positive Tortenanteile verwandeln.
+
+WP/Wetter: Summe und Innenenergie getrennt validieren. Innen1kWh/Außen9kWh ergeben Gesamt10kWh und Innen1kWh; Innen allein kann bei fehlendem Außenwert sichtbar bleiben, die Summe bleibt dann offen. XLSX muss Innenenergie sowie getrennte Abdeckungs-/Qualitätsspalten enthalten. Explizite Ausfälle unterbrechen Kurven, Wetter-Teilmittel bleiben klar markiert. Zeitzone und tatsächliche Tageslänge gehören in die Auswertung.
+
+## 15. Abschluss ohne übertriebene Nachbauzusage
+
+Erzeuge einen ausführbaren Installations-/Migrationsweg für die konkrete Zielanlage, keine bloße Textbeschreibung. Nenne erforderliche Integrationen und Ressourcen, sichere vorhandene Stände und liefere einen gezielten Rückbau. Erzeuge ein privates Betriebsdokument mit Quellen, Formeln, Annahmen, Datenbeginn, Fehlerbehandlung und noch unbeobachteten geplanten Läufen.
+
+Prüfe jeden ausgewählten Bedienfall mit der Funktionsmatrix und den fachlichen Gegenbeispielen. Wenn ein Modul wegen fehlender Sensoren oder Historie nur teilweise möglich ist, nenne die Einschränkung statt ein Ersatzresultat als exakt gleich auszugeben. Keine Behauptung einer pixelgleichen oder intern identischen Kopie aus einem Prompt. Ziel ist eine fachlich überprüfte gleichartige Energieanwendung mit den tatsächlich vorhandenen Geräten.
 
 Beginne jetzt mit der **rein lesenden Bestandsaufnahme** meiner Anlage und den wichtigsten fehlenden Zuordnungen. Führe anschließend die freigegebenen Arbeiten eigenständig bis zur geprüften Umsetzung fort.

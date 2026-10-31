@@ -23,7 +23,8 @@ Andere Hausfunktionen wie Anwesenheit, Kochgeräte, Teich, Kameras oder Raumsteu
 2. `config/anlage.vorlage.json` nach `config/anlage.private.json` kopieren und **nur lokal** ausfüllen. `null` bedeutet ungeklärt, niemals automatisch null Verbrauch.
 3. [Messquellen zuordnen](docs/02-sensoren-und-parameter.md). `config/demo.json` zeigt ausschließlich frei erfundene Beispiele.
 4. Den [ausführlichen Master-Prompt](prompts/MASTER-PROMPT.md) zusammen mit der privaten Anlagenbeschreibung im eigenen KI-Projekt verwenden. Private Dateien nicht in öffentliche Chats oder Issues kopieren.
-5. Module einzeln umsetzen und mit dem [Abnahmekatalog](docs/06-abnahme.md) prüfen.
+5. Das vollständige Repository bereitstellen; die KI muss auch die [Referenzarchitektur](docs/10-referenzarchitektur.md) und Fachdateien lesen. Der Prompt allein genügt nicht.
+6. Module einzeln umsetzen und mit dem [Abnahmekatalog](docs/06-abnahme.md) prüfen.
 
 Der Prompt startet mit einer Bestandsaufnahme. Er darf fehlende Sensoren nicht erfinden und allein über MCP keine beliebige Konfigurations-Schreibfähigkeit annehmen.
 
@@ -31,6 +32,7 @@ Der Prompt startet mit einer Bestandsaufnahme. Er darf fehlende Sensoren nicht e
 
 | Datei | Zweck |
 | --- | --- |
+| [Referenzarchitektur](docs/10-referenzarchitektur.md) | Bausteine, Datenverträge, Abläufe und konkrete Ansichten |
 | [Module](docs/03-module.md) | Funktionsumfang und optionale Erweiterungen |
 | [Rechenregeln](docs/04-berechnungen.md) | Energie, Prognosefehler, Geld, CO₂e, WP und Verluste |
 | [Datenqualität](docs/05-datenqualitaet.md) | Fehlende/veraltete Daten, Teilwerte, Ersatzwerte |

@@ -6,6 +6,10 @@ Das Repository enthält eine detaillierte neutrale Funktionsspezifikation, einen
 
 Die Spezifikation beruht auf praktischen Entwicklungs- und Prüfmethoden, ihre allgemeine Übertragbarkeit auf andere Hardware ist dennoch nicht automatisch nachgewiesen. Ein bestandener Repositorytest bestätigt weder ein fremdes Modbusprofil noch eine WP-Verdrahtung noch die Wiederherstellbarkeit eines NAS-Backups.
 
+## Was „Nachbauen“ hier bedeutet
+
+Der Master-Prompt muss gemeinsam mit allen zehn Fachdateien und der eigenen privaten Anlagenbeschreibung verwendet werden. Die Referenzarchitektur konkretisiert Datenverträge, Abschlüsse, Komponenten und Bedienfälle. Damit ist ein funktional gleichartiger individueller Nachbau spezifiziert. Eine exakt gleiche fertige Installation oder reproduzierbar identischer Quellcode wird mit diesem Kit weiterhin nicht ausgeliefert. Die KI muss die Software erst entwickeln und mit der Zielanlage abnehmen.
+
 ## Bewusste offene Grenzen
 
 - Die richtige Skalierung, Frische und Messgrenze muss pro Gerät vor Ort geprüft werden.
