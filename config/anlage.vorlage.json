@@ -1,0 +1,66 @@
+{
+  "format_version": 1,
+  "example_only": false,
+  "timezone": null,
+  "hardware": {
+    "inverter": null,
+    "battery_manufacturer": null,
+    "battery_nominal_kwh": null,
+    "battery_usable_kwh": null,
+    "pv_installed_kwp": null,
+    "heat_pump": null,
+    "weather_station": null
+  },
+  "modules": {
+    "pv_energy": true,
+    "battery": true,
+    "forecast": true,
+    "cost_burndown": true,
+    "co2_burndown": true,
+    "tablet": true,
+    "heat_pump_weather": true,
+    "community": false,
+    "archive_backup": false,
+    "loss_diagnostics": false
+  },
+  "sources": {
+    "pv_power": [],
+    "pv_energy": [],
+    "grid_import_energy": null,
+    "grid_export_energy": null,
+    "grid_power": null,
+    "house_power": null,
+    "battery_soc": null,
+    "battery_min_soc": null,
+    "battery_power": null,
+    "battery_charge_energy": null,
+    "battery_discharge_energy": null,
+    "battery_soh": null,
+    "wp_power": [],
+    "wp_outdoor_energy": null,
+    "wp_indoor_energy": null,
+    "wp_vendor_heating_energy": null,
+    "wp_vendor_hot_water_energy": null,
+    "outside_temperature": null,
+    "wind_speed": null,
+    "forecast_tomorrow": null,
+    "bev_power": [],
+    "bev_energy": null
+  },
+  "assumptions": {
+    "pv_usable_fraction": null,
+    "gas_reference_kwh_year": null,
+    "wp_reference_kwh_year": null,
+    "bev_kwh_per_100km": null,
+    "reference_diesel_l_per_100km": null,
+    "price_intervals": [],
+    "co2_intervals": [],
+    "forecast_snapshot_local_time": null,
+    "temporal_uncertainty_fraction": null
+  },
+  "permissions": {
+    "device_writes": false,
+    "community_transmission": false,
+    "notifications": false
+  }
+}

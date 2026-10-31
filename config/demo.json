@@ -1,0 +1,75 @@
+{
+  "format_version": 1,
+  "example_only": true,
+  "timezone": "Europe/Berlin",
+  "hardware": {
+    "inverter": "Beispiel-Wechselrichter",
+    "battery_manufacturer": "Beispiel-Speicher",
+    "battery_nominal_kwh": 12.0,
+    "battery_usable_kwh": 10.0,
+    "pv_installed_kwp": 8.0,
+    "heat_pump": "Beispiel-WP",
+    "weather_station": "Beispiel-Wetterstation"
+  },
+  "modules": {
+    "pv_energy": true,
+    "battery": true,
+    "forecast": true,
+    "cost_burndown": true,
+    "co2_burndown": true,
+    "tablet": true,
+    "heat_pump_weather": true,
+    "community": false,
+    "archive_backup": false,
+    "loss_diagnostics": false
+  },
+  "sources": {
+    "pv_power": [
+      "sensor.demo_pv_dach_leistung",
+      "sensor.demo_pv_carport_leistung"
+    ],
+    "pv_energy": [
+      "sensor.demo_pv_dach_energie",
+      "sensor.demo_pv_carport_energie"
+    ],
+    "grid_import_energy": "sensor.demo_netzbezug_gesamt",
+    "grid_export_energy": "sensor.demo_netzeinspeisung_gesamt",
+    "grid_power": "sensor.demo_netz_leistung",
+    "house_power": null,
+    "battery_soc": "sensor.demo_batterie_soc",
+    "battery_min_soc": "number.demo_batterie_mindest_soc",
+    "battery_power": null,
+    "battery_charge_energy": null,
+    "battery_discharge_energy": null,
+    "battery_soh": null,
+    "wp_power": [
+      "sensor.demo_wp_innen_leistung",
+      "sensor.demo_wp_aussen_leistung"
+    ],
+    "wp_outdoor_energy": "sensor.demo_wp_aussen_energie",
+    "wp_indoor_energy": "sensor.demo_wp_innen_energie",
+    "wp_vendor_heating_energy": null,
+    "wp_vendor_hot_water_energy": null,
+    "outside_temperature": "sensor.demo_aussentemperatur",
+    "wind_speed": "sensor.demo_windgeschwindigkeit",
+    "forecast_tomorrow": "sensor.demo_prognose_morgen",
+    "bev_power": [],
+    "bev_energy": null
+  },
+  "assumptions": {
+    "pv_usable_fraction": 0.9,
+    "gas_reference_kwh_year": null,
+    "wp_reference_kwh_year": null,
+    "bev_kwh_per_100km": null,
+    "reference_diesel_l_per_100km": null,
+    "price_intervals": [],
+    "co2_intervals": [],
+    "forecast_snapshot_local_time": "19:00",
+    "temporal_uncertainty_fraction": 0.05
+  },
+  "permissions": {
+    "device_writes": false,
+    "community_transmission": false,
+    "notifications": false
+  }
+}
