@@ -12,6 +12,7 @@ Eine ausführliche Bauanleitung und ein anpassbarer KI-Arbeitsauftrag für eine 
 - Kosten- und CO₂e-Burndown: Tagesjournal, Komponenten, Preiszeiträume und editierbare Modellannahmen.
 - Kompakte Tabletansicht, mobile Darstellung und einheitliche Pastellfarben.
 - Wärmepumpe: Innen-/Außenenergie, optional Herstellervergleich, Heizung/Warmwasser als getrenntes Modell.
+- Optional: WP-Heizkurven-Offset mit manuellem Basiswert und zuschaltbarem Tageszuschlag; siehe [WP-Offsetsteuerung](docs/11-wp-offsetsteuerung.md).
 - Eigene Wetterstation: Außentemperatur und Wind im WP-Tagesvergleich, Tageswerte und Jahres-Excel.
 - Optional: Ortsnetz-Community, Messdatenarchiv, HA-Vollbackup und Zustandsübersicht.
 
@@ -33,6 +34,7 @@ Der Prompt startet mit einer Bestandsaufnahme. Er darf fehlende Sensoren nicht e
 | Datei | Zweck |
 | --- | --- |
 | [Referenzarchitektur](docs/10-referenzarchitektur.md) | Bausteine, Datenverträge, Abläufe und konkrete Ansichten |
+| [WP-Offsetsteuerung](docs/11-wp-offsetsteuerung.md) | Optionale Bedienung und geprüfte Freigabe einer bestehenden Witterungskurve |
 | [Module](docs/03-module.md) | Funktionsumfang und optionale Erweiterungen |
 | [Rechenregeln](docs/04-berechnungen.md) | Energie, Prognosefehler, Geld, CO₂e, WP und Verluste |
 | [Datenqualität](docs/05-datenqualitaet.md) | Fehlende/veraltete Daten, Teilwerte, Ersatzwerte |

@@ -113,7 +113,7 @@ Prozentanteile: gleiche Zeitgrenze für alle Komponenten. Bei nichtpositiver Sum
 | Tablet | Status, PV, Speicher, Prognose | Leistungsfluss und Energie heute | Kompaktmenü mit Rückweg |
 | Kosten-Burndown | Saldo, Amortisationsszenario, momentane Rate | Verlauf, Tageswahl, Komponenten und Kostenjournal | Preis-/Zins-/Verlustannahmen |
 | CO₂e-Burndown | Saldo, Modellhorizont, momentane Rate | Verlauf, Tageswahl, Komponenten | Faktoren, Vorkette und Szenariogrenzen |
-| Wärmepumpe | Status, Gesamt-/Innenstrom, Temperatur-/Windmittel | Tagesprofil, Monatsvergleich, Jahres-Excel | Messgrenzen, Teilmittel, keine Heizstabbehauptung |
+| Wärmepumpe | Status, optional freigegebene Offset-Bedienung, Gesamt-/Innenstrom und Wetter | Tagesprofil, Monatsvergleich, Jahres-Excel | Messgrenzen, Teilmittel, keine Heizstabbehauptung |
 | Anlagenzustand | Quellen- und Abschlussstatus | Journal-/Archiv-/Backupnachweis | Letzter Erfolg und konkrete fehlende Nachweise |
 | Ortsnetz optional | Frequenz und drei Spannungen | Unterstützte Empfehlungen und Übertragungsstatus | Mittelung, Zustimmung, keine automatische Netzsteuerung |
 
@@ -130,6 +130,8 @@ Bei fehlender älterer Detailhistorie geeignete Langzeitstunden verwenden und Au
 Export mindestens: Datum, Gesamt-kWh, Gesamtqualität, Innen-kWh, Innenqualität, Temperaturmittel, Temperaturabdeckung, Temperaturqualität, Windmittel, Windabdeckung, Windqualität und tatsächliche Tageslänge. Methodenblatt mit Einheit, Zeitzone, Quellenrollen und Unvollständigkeitsregeln. Fehler oder Abbruch einer Jahresabfrage darf keine scheinbar vollständige Datei liefern. Große Historie monatsweise nacheinander lesen. Download speichern, zurücklesen und auf dem Zielbrowser öffnen.
 
 Herstellervergleich erst nach gemeinsam belegter Basis und vollständigem Monat. Jahressummenreset des Herstellers kann einen Grenzmonat sperren. Keine automatische Reparatur unbekannter Altdaten. Gasvergleich parallel und unabhängig; eigener Heizbedarf statt zirkulär aus demselben WP-Strom abgeleitetem „Beweis“.
+
+Optionale Offsetsteuerung: [eigene Bau- und Abnahmespezifikation](11-wp-offsetsteuerung.md). Basiswert, Automatikschalter, Initialisierungsnachweis, Ziel, gemeldeter Offset, Sperrgrund und letzter Sendeversuch bilden eine getrennte Steuerschicht. Die WP-Auswertung bleibt davon unabhängig; keine Anwendung des PV-Nutzfaktors auf Offset oder WP-Strom. Bedienelemente im WP-Bereich, ausführliche Erläuterung dahinter.
 
 ## 9. Optionale Überwachung und Steuerung
 

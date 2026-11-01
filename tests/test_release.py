@@ -79,6 +79,16 @@ class ReleaseTests(unittest.TestCase):
     def test_demo_sources_allowed(self):
         self.assertEqual(c.findings('sensor.demo_wp_innen_energie'), [])
 
+    def test_offset_module_is_disabled(self):
+        self.assertFalse(self.demo['modules']['heat_pump_offset_control'])
+        self.demo['modules']['heat_pump_offset_control'] = True
+        self.assertTrue(c.validate_config(self.demo))
+
+    def test_offset_entity_privacy(self):
+        self.assertEqual(c.findings('climate.demo_wp_offset'), [])
+        self.assertEqual(c.findings('climate.set_temperature'), [])
+        self.assertIn('non_demo_entity', self.categories('climate.' + 'private_offset'))
+
     def test_official_links_allowed(self):
         self.assertEqual(c.findings('https://www.home-assistant.io/integrations/'), [])
 

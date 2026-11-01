@@ -14,7 +14,7 @@ EXPECTED = {
     *{f'docs/{name}.md' for name in (
         '01-einrichtung', '02-sensoren-und-parameter', '03-module',
         '04-berechnungen', '05-datenqualitaet', '06-abnahme',
-        '07-datenschutz', '08-betrieb', '09-status-und-grenzen', '10-referenzarchitektur')},
+        '07-datenschutz', '08-betrieb', '09-status-und-grenzen', '10-referenzarchitektur', '11-wp-offsetsteuerung')},
 }
 PATTERNS = {
     'email': r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b',
@@ -30,7 +30,7 @@ PATTERNS = {
     'map_location_url': r'https?://\S*(?:maps\S*[?&](?:q|ll)=|[?&](?:lat|lon|latitude|longitude)=)',
 }
 COMPILED = {name: re.compile(pattern) for name, pattern in PATTERNS.items()}
-ENTITY = re.compile(r'\b(?:sensor|binary_sensor|number|input_number|input_boolean|device_tracker|person|notify)\.[a-z0-9_]+\b')
+ENTITY = re.compile(r'\b(?:sensor|binary_sensor|number|input_number|input_boolean|input_datetime|input_button|climate|device_tracker|person|notify)\.[a-z0-9_]+\b')
 ARRAY_ROLES = {'pv_power', 'pv_energy', 'wp_power', 'bev_power'}
 
 
@@ -39,7 +39,7 @@ def findings(text):
     out = [(name, text.count('\n', 0, m.start()) + 1)
            for name, pattern in COMPILED.items() for m in pattern.finditer(text)]
     out += [('non_demo_entity', text.count('\n', 0, m.start()) + 1)
-            for m in ENTITY.finditer(text) if '.demo_' not in m.group()]
+            for m in ENTITY.finditer(text) if '.demo_' not in m.group() and m.group() != 'climate.set_temperature']
     return out
 
 
@@ -60,6 +60,8 @@ def validate_config(data):
             errors.append(group + ' must contain booleans')
     if data['permissions'] != {'device_writes': False, 'community_transmission': False, 'notifications': False}:
         errors.append('public permission defaults must remain disabled')
+    if data['modules'].get('heat_pump_offset_control') is not False:
+        errors.append('public WP offset module must remain disabled')
     for key, value in data['hardware'].items():
         if key.endswith(('_kwh', '_kwp')) and value is not None:
             if type(value) not in (int, float) or not math.isfinite(value) or value <= 0:

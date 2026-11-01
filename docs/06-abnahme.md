@@ -50,4 +50,8 @@ Excel auf echten unterstützten Zielgeräten herunterladen und wieder öffnen: D
 
 NAS aus→lokale Erfassung läuft; innerhalb Zeitfenster begrenztes Nachholen; außerhalb kein unnötiges Aufwecken. Fehlschlagwarnung einmal, Erfolg erst nach Rücklesen und danach Entwarnung. Keine Warnflut durch unnötige Automationsstarts. Vorhandener vollständiger Backupinhalt, Verschlüsselung und privat vorhandener Schlüssel belegt. Vollständiger Wiederherstellungstest möglichst auf separatem Testsystem, nicht über das bewohnte Produktivsystem.
 
+## F. Optional freigegebene WP-Offsetsteuerung
+
+[Zeit- und Ausfallfälle](11-wp-offsetsteuerung.md) einschließlich Basis−1K→tagsüber+1K/sonst−1K, sicherer Erstinitialisierung, Ausschalten mit Rücknahme, gleicher Sollwert ohne erneuten Befehl, fehlender/restaurierter/veralteter Quelle und Bereichsverletzung prüfen. Keine Betriebsart-/Warmwasser-/Schutzänderung. Verpasste Rücknahme und HA-Neustart mit erhaltenen Helfern nachholen; Cloudfehler begrenzt behandeln. HA-Sollwertrückmeldung nicht allein als physische Gerätebestätigung werten. Nicht tatsächlich beobachtete Fälle offen kennzeichnen.
+
 Pro Test Ergebnis, Version und Prüfgrenze lokal festhalten. „Noch nicht geprüft“ ist ein zulässiger Status; kein grünes Häkchen ohne Nachweis.

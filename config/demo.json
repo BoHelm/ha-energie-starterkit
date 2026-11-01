@@ -21,7 +21,8 @@
     "heat_pump_weather": true,
     "community": false,
     "archive_backup": false,
-    "loss_diagnostics": false
+    "loss_diagnostics": false,
+    "heat_pump_offset_control": false
   },
   "sources": {
     "pv_power": [
@@ -54,7 +55,9 @@
     "wind_speed": "sensor.demo_windgeschwindigkeit",
     "forecast_tomorrow": "sensor.demo_prognose_morgen",
     "bev_power": [],
-    "bev_energy": null
+    "bev_energy": null,
+    "wp_offset_control": "climate.demo_wp_offset",
+    "wp_setpoint_mode": "sensor.demo_wp_sollwertmodus"
   },
   "assumptions": {
     "pv_usable_fraction": 0.9,

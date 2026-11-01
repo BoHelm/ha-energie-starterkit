@@ -90,6 +90,12 @@ Jahresauswahl und Export der Tageswerte in echteXLSX. Alle Kalendertage, echte E
 
 Optional monatliches unabhängiges Gasvergleichsmodell parallel, Heizung und Warmwasser getrennt, lokale Messunterlagen/Koeffizienten. Keine fremde Heizgerade einsetzen. Nur Heizwärmemessung ohne Warmwasser nicht als Gesamt-JAZ ausgeben. Fenstereffekt ohne Messnachweis klar als Szenario. Bestehende Burndown-Rechnung nicht automatisch austauschen.
 
+### Optional: Vorlauf-Offset bei bestehender Heizkurve
+
+Lies [WP-Offsetsteuerung](../docs/11-wp-offsetsteuerung.md). Nur nach gesonderter Auswahl und Gerätefreigabe umsetzen; öffentliches Modul und Automatik standardmäßig aus. Tatsächliche Offset-Entität, Sollwertmodus, Bereich, Raster und Cloud-Verhalten zuerst belegen. Keine feste Vorlauftemperatur oder Betriebsart statt eines Offsets setzen.
+
+Persistenter manueller Basiswert plus schaltbarer Tageszuschlag: Beispiel10:00≤Ortszeit<16:00 Basis+2K, sonst Basis; außerhalb nur Zuschlag0K. Erstinitialisierung bei gesperrter Regel aus bestätigtem aktuellem Offset, kein technischer Helfer-Standardwert ans Gerät. Bedienung unter Haus→Wärmepumpe; keine zweite konkurrierende Eingabestelle. Automatik aus: nur bewusste Basis-/Schalter-/Anwenden-Bedienung, kein periodisches Überschreiben der App. Automatik an: verpasste Umschaltungen nach gültigen Daten nachholen, identische Ziele überspringen, gleiche fehlgeschlagene Ziele begrenzt erneut versuchen. Modus, Frische und Gesamtziel unmittelbar vor jedem Befehl prüfen. Keine künstlichen Nullen, kein stilles Clipping, keine zusätzlichen Cloud-Refreshs. Nur Offset schreiben, alle Schutz-/Warmwasser-/Kurven-/Herstellerzeitplanparameter erhalten. Gewünschten, von HA gemeldeten und unabhängig bestätigten Wert unterscheiden; keine Einspargarantie. Konkrete Zeit-/Ausfall-/Neustartfälle aus der Fachdatei abnehmen.
+
 ## 10. Archiv, Zustandsübersicht und optionale Community
 
 Wenn ausgewählt: lokale Messdatenerfassung mit Aufbewahrung, tägliche Blockübertragung aufsNAS im zulässigen Fenster und separate wöchentliche HA-Vollsicherung. Keine Dauerabfragen des schlafenden NAS. Begrenzte persistente Retry-Versuche, Parallelitätssperre, Fehlwarnung bei Überfälligkeit/knappem Speicher und Entwarnung erst nach rückgelesenem Erfolg. Zeitfenster, lokale Reserve, Verschlüsselung und Wiederherstellungsschlüssel privat festlegen. Verpasste geplante Backups erkennen, selbst wenn kein Job gestartet war.

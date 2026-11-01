@@ -8,7 +8,7 @@ Die Spezifikation beruht auf praktischen Entwicklungs- und Prüfmethoden, ihre a
 
 ## Was „Nachbauen“ hier bedeutet
 
-Der Master-Prompt muss gemeinsam mit allen zehn Fachdateien und der eigenen privaten Anlagenbeschreibung verwendet werden. Die Referenzarchitektur konkretisiert Datenverträge, Abschlüsse, Komponenten und Bedienfälle. Damit ist ein funktional gleichartiger individueller Nachbau spezifiziert. Eine exakt gleiche fertige Installation oder reproduzierbar identischer Quellcode wird mit diesem Kit weiterhin nicht ausgeliefert. Die KI muss die Software erst entwickeln und mit der Zielanlage abnehmen.
+Der Master-Prompt muss gemeinsam mit allen elf Fachdateien und der eigenen privaten Anlagenbeschreibung verwendet werden. Die Referenzarchitektur konkretisiert Datenverträge, Abschlüsse, Komponenten und Bedienfälle. Damit ist ein funktional gleichartiger individueller Nachbau spezifiziert. Eine exakt gleiche fertige Installation oder reproduzierbar identischer Quellcode wird mit diesem Kit weiterhin nicht ausgeliefert. Die KI muss die Software erst entwickeln und mit der Zielanlage abnehmen.
 
 ## Bewusste offene Grenzen
 
@@ -20,6 +20,7 @@ Der Master-Prompt muss gemeinsam mit allen zehn Fachdateien und der eigenen priv
 - XLSX-Dateien müssen nach individueller Umsetzung tatsächlich auf den Zielbrowsern heruntergeladen und geöffnet werden. Ein Link oder korrekter ZIP-Aufbau genügt nicht als End-to-End-Abnahme.
 - Gezielt3kW Netzladung/-einspeisung, CAN-Zellauslesung und feste Balancing-Ladepläne sind keine zugesagten Standardfunktionen dieses Kits.
 - Wetterdaten ersetzen keine Wärmemengenmessung. Innenstrom ist ohne Schaltplan kein reiner Heizstabverbrauch.
+- Optionale WP-Offsetsteuerung ist eine hardwareabhängige Spezifikation, kein universeller Daikin-Treiber oder garantierte COP-Optimierung. Bei Cloud-/HA-Ausfall ist eine pünktliche Rücknahme nicht garantiert. Gerätebefehle bleiben standardmäßig aus.
 - Datenschutzprüfung ist regelbasiert plus manuell. Keine mathematische Garantie völliger Anonymität und keine Anonymisierung des GitHub-Profils.
 
 ## Weiterentwicklung

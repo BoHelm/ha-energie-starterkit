@@ -36,6 +36,8 @@ Jahr wählbar, Jahres-Tageswerte als echte XLSX: alle Kalendertage, Datum numeri
 
 Optional unabhängige monatliche Gasvergleichsrechnung mit Heizung und Warmwasser getrennt. Koeffizienten müssen aus den Unterlagen der jeweiligen Anlage kommen. Ohne gemessene Wärme inklusive Warmwasser keine gemessene Gesamt-JAZ behaupten. Erst parallel validieren, bestehende Burndown-Zahlen nicht automatisch ersetzen.
 
+Optional [WP-Offsetsteuerung](11-wp-offsetsteuerung.md): manueller Basiswert, zuschaltbarer Tageszuschlag bei erhaltener Witterungskurve, Bedienung im WP-Bereich. Zunächst aus, Gerätefähigkeit und Freigabe erforderlich. Fehlende/veraltete Daten sperren Befehle; keine automatische Änderung von Warmwasser oder Schutzgrenzen.
+
 ## Weitere optionale Energie-Module
 
 - Ortsnetz-Community: unterstützte Messrollen, Fünf-Minuten-Mittel, Netzfrequenz/Phasenspannungen und Datenqualität. Übertragung standardmäßig aus; Standort und Zustimmung ausschließlich lokal klären. [Projekt](https://github.com/thomaslehmann1234/datenerfassung-ortsnetz-auslastung).
