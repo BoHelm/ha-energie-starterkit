@@ -37,3 +37,12 @@ Tage ohne Aussagen und technische Ausfalltage sind verschiedene Größen. Erst e
 ## Geräte- und Cloudlast
 
 UI-Refresh ist keine zusätzliche Geräteabfrage. Keine vollständige Historie pro Sekunde abrufen. Historie cachen, große Abfragen begrenzen und Export monatsweise nacheinander lesen. Herstellerquoten beachten. Bei Modbus/Solarman Serialspeed allein nicht als Timeoutursache diagnostizieren; tatsächliche Abfragezeit, Fehler und Netzabbrüche zeitlich abgleichen. WLAN- und Geräteprobleme nicht durch immer höhere Pollingrate verschärfen.
+
+
+## Getrennte Qualitätsziele und sparsame Historie
+
+Die [informative Tagespolitik](12-minutenhistorie-und-betrieb.md) darf nach ausdrücklicher Wahl begrenzte Ersatzmengen anzeigen. Das ist eine Erweiterung für die Information des Betreibers, kein Aufweichen von Schutzgrenzen oder ein Nachweis unter fünf Prozent Fehler. Ein solcher Tageswert bleibt als geschätzt erkennbar; vorhandene echte Einzelkomponenten nicht verwerfen. Weder geschätzte Erträge noch nachträglich neu berechnete Prognosen eignen sich als unabhängiger Prognose-Test.
+
+Eine vollständige Minute, ein Teilmittel und eine Minutenstichprobe sind verschiedene Datenarten. Fastwerte für Schutz und Live bleiben erhalten; nötige Historienverbraucher wechseln gemeinsam auf einen datierten Adapter. Keine Datenlücke aus dem bloßen Fehlen einer bewusst abgeschalteten Rohhistorie ableiten.
+
+Bei CO₂ zwei Ursachen getrennt halten: fehlende API-Faktoren bei belegter Netzladung und ungeklärte Batterieherkunft. Eine freigegebene Herkunftsannahme bleibt als angenommene kWh sichtbar, auch bei null Gramm. [Regeln und Rückwirkung](13-co2-stunden-und-speicher.md) beachten.

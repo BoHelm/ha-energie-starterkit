@@ -8,7 +8,7 @@ Die Spezifikation beruht auf praktischen Entwicklungs- und Prüfmethoden, ihre a
 
 ## Was „Nachbauen“ hier bedeutet
 
-Der Master-Prompt muss gemeinsam mit allen elf Fachdateien und der eigenen privaten Anlagenbeschreibung verwendet werden. Die Referenzarchitektur konkretisiert Datenverträge, Abschlüsse, Komponenten und Bedienfälle. Damit ist ein funktional gleichartiger individueller Nachbau spezifiziert. Eine exakt gleiche fertige Installation oder reproduzierbar identischer Quellcode wird mit diesem Kit weiterhin nicht ausgeliefert. Die KI muss die Software erst entwickeln und mit der Zielanlage abnehmen.
+Der Master-Prompt muss gemeinsam mit allen Fachdateien im Ordner `docs` und der eigenen privaten Anlagenbeschreibung verwendet werden. Die Referenzarchitektur konkretisiert Datenverträge, Abschlüsse, Komponenten und Bedienfälle. Damit ist ein funktional gleichartiger individueller Nachbau spezifiziert. Eine exakt gleiche fertige Installation oder reproduzierbar identischer Quellcode wird mit diesem Kit weiterhin nicht ausgeliefert. Die KI muss die Software erst entwickeln und mit der Zielanlage abnehmen.
 
 ## Bewusste offene Grenzen
 

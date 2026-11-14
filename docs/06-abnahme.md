@@ -55,3 +55,18 @@ NAS aus→lokale Erfassung läuft; innerhalb Zeitfenster begrenztes Nachholen; a
 [Zeit- und Ausfallfälle](11-wp-offsetsteuerung.md) einschließlich Basis−1K→tagsüber+1K/sonst−1K, sicherer Erstinitialisierung, Ausschalten mit Rücknahme, gleicher Sollwert ohne erneuten Befehl, fehlender/restaurierter/veralteter Quelle und Bereichsverletzung prüfen. Keine Betriebsart-/Warmwasser-/Schutzänderung. Verpasste Rücknahme und HA-Neustart mit erhaltenen Helfern nachholen; Cloudfehler begrenzt behandeln. HA-Sollwertrückmeldung nicht allein als physische Gerätebestätigung werten. Nicht tatsächlich beobachtete Fälle offen kennzeichnen.
 
 Pro Test Ergebnis, Version und Prüfgrenze lokal festhalten. „Noch nicht geprüft“ ist ein zulässiger Status; kein grünes Häkchen ohne Nachweis.
+
+
+## G. Minutenhistorie, informative Tageswerte und neue Modelle
+
+- Originaleingänge, Schutztrigger und Integratoren unverändert; abgeschlossene Minuten zeitgewichtet mit Min/Max und Abdeckung. Stichprobe darf nicht als Mittelwert bestehen. Alte/neue Historie am Umschaltzeitpunkt ohne Überlappung; spätere Quellgruppe verschiebt keinen alten Wechsel.
+- Gemeinsame Ladebedingungen aus schnellen zeitgleichen Quellen prüfen. Keine erfundene Gleichzeitigkeit aus getrennten Minutenmitteln. Spannungs-/Stromhistorien behalten V/A, kein Wh-Integral.
+- Ein PV-Zweig fehlt: echte WP-/BEV-Mengen bleiben; nur freigegebener Anteil als Ersatz. Pausenbudget überschritten, instabile Last, Schätzungskette und bereits im Integral enthaltene Ersatzenergie gesondert prüfen. Erneuter Abschluss erzeugt keine Doppelbuchung; spätere echte Tage nach einer Lücke bleiben erhalten.
+- Zwei Prognosemodelle: gleiche Faktoren und Vergleichstage, vorab gespeicherte Originale, fehlender Snapshot, wechselnde Parameter und geschätzter Ertrag. Kein künstlicher Erfolg durch Prognose als Ertragsersatz.
+- CO₂: reine PV, reine Netzversorgung, zeitversetzte Netzladung/Entladung, API-Fallback, unbekannter Bestand und Herkunft nach Datenlücke. Modellwechsel darf nur unbekannte CO₂-Masse ändern; Energie, bekannte Netzmasse und Buchungsidentität unverändert. Netzladung vor dem Modellbeginn bleibt bei späterer Entladung belastet.
+- Speicher-PV-Annahme muss ausdrücklich freigegeben und sichtbar sein; ohne Wahl keine automatische emissionsfreie Herkunft. SoC-Korrektur ohne gemessene Ladung als Modellunsicherheit erhalten.
+- Jahresauswahl zeigt zwölf Monatspositionen, fehlende Monate nicht null. Lokale 23-/25-Stunden-Tage und Jahrgrenzen auch in API-Cache und Herkunftskette prüfen.
+- Schreiblast vor/nach Änderung in längeren vergleichbaren Fenstern messen. Zeilenreduktion beweist keine proportionale physische Byteersparnis. Keine Hardwareänderung allein aufgrund eines kurzen Lastfensters.
+- Gleiche SSD-Modelle eindeutig unterscheiden, aktives Laufwerk schützen, Backup zurücklesen und Wiederherstellung isoliert erproben. Keine zweite aktive Steuerinstanz gegen die echte Anlage.
+
+Diese Fälle sind Abnahmeaufträge für die spätere individuelle Implementierung. Die Dokumenttests des Kits führen sie nicht auf einer HA-Installation aus.

@@ -46,3 +46,14 @@ Optional [WP-Offsetsteuerung](11-wp-offsetsteuerung.md): manueller Basiswert, zu
 - Verlustdiagnose und Dachausbau-Szenario: ausschließlich gekennzeichnete Modelle, keine kausale Effizienzbehauptung aus unsynchronen Messungen.
 
 Gezielte Netzladung/-einspeisung und pauschale Lade-/Balancing-Automatik sind nicht Teil der Standardumsetzung. Erst Gerätefähigkeit, Leistungsgrenze, SoC-Grenzen und bestehende Zeitfenster unabhängig klären. Keine automatische Aktivierung aus einer Community-Empfehlung.
+
+
+## Neuere optionale Erweiterungen
+
+- [Minutenhistorie und Betrieb](12-minutenhistorie-und-betrieb.md): Originaleingänge schnell belassen; nur benötigte Historie auf zeitgewichtete Minuten umstellen, Tagesberichte komponentenweise robuster machen und SSD-/Backupbetrieb planen.
+- [CO₂-Stunden und Speicher](13-co2-stunden-und-speicher.md): lokaler API-Cache, zeitgerechte WP-/BEV-Bewertung und getrennte Netz-/Hausansicht samt expliziter Herkunftsannahmen.
+- [Open-Meteo-Vergleich](14-openmeteo-vergleich.md): zweite Prognoseansicht, mehrere Teilflächen, editierbare Sonnenstandsverschattung und fairer Day-ahead-Vergleich.
+
+Energieansicht zusätzlich: gewähltes Kalenderjahr mit genau zwölf Monatspositionen, fehlende Monate leer; Verbrauch optional als schmale eigene Balken neben der PV. PV-Anteil nur bei gültiger gemeinsamer Verbrauchsbasis. Eine Begrenzung auf hundert Prozent setzt eine passende Definition und Messgrenze voraus; PV-Produktion kann allgemein auch größer als Verbrauch sein. Tages-/Wochen-/Monats-Anteilkarten erhalten eine eigene Datumswahl. Mobile Reihenfolge: Zahlen und Diagramme vor langen Texten.
+
+Gemeinsam genutzte Größen und Annahmen zentral mit Quelle, Einheit, Geltungszeit und Rückwirkung führen. Historische Preise als datierte Fakten schützen; funktionsbezogene Bedienung wie WP-Offset im WP-Bereich belassen. Keine unterschiedlichen Helfer für dieselbe globale Größe einführen.

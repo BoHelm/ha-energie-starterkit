@@ -65,3 +65,12 @@ Eine Gas-Parallelrechnung muss unabhängige Wärmebedarfsannahmen verwenden. Hei
 Signierter Bilanzrest=Zufuhr−Abfuhr in derselben Messgrenze und im gemeinsamen Zeitfenster. Gemeinsame Stunden-/Tages-Zählerbilanzen sind oft robuster als asynchrone Momentanleistung. AC/DC-Grenzen und Batterie-Energieänderung müssen passen. Bei Speicherung über Fenstergrenzen kann ein Rest auch Speicheränderung enthalten.
 
 Negative Reste sind Diagnosen, keine negativen technischen Verluste. Permanentes max(Rest,0) erzeugt positiven Clipping-Bias. Ersatzwerte samt Energiebeitrag und Zeit kennzeichnen. Keine kausale Aussage „SchaltungA ist effizienter“ ohne vergleichbare Betriebsbedingungen, Meterabgleich, Standby-/Wandlungsgrenzen und Unsicherheitsband. AC-Durchleitung ist keine automatisch belegte Doppelwandlung.
+
+
+## 9. Erweiterte Zeit- und Herkunftsmodelle
+
+[Minutenhistorie](12-minutenhistorie-und-betrieb.md) definiert zeitgewichtete abgeschlossene Intervalle und die optionale informative Ersatzpolitik. Die oben strengen Tagesregeln bleiben für gemessene beziehungsweise geprüfte Aussagen maßgeblich. Eine ausdrücklich zugelassene informative Schätzung muss als andere Qualitätsklasse behandelt werden und darf nicht als Messbeleg in die Prognosegüte eingehen.
+
+[CO₂-Stunden und Speicher](13-co2-stunden-und-speicher.md) trennt API-Fallback von unbekannter Batterieherkunft. Eine freigegebene PV-Annahme betrifft ausschließlich ungeklärte Herkunft; tatsächliche Netzladung behält ihren CO₂-Faktor. Bei Rückwirkung die gespeicherte Herkunftskette erneut rechnen und bekannte Netz-/Fallback-Kategorien bewahren. Eine getrennte Netz-/Hausbilanz erhält keinen zusätzlichen wirtschaftlichen PV-Nutzfaktor.
+
+[Zwei Prognosemodelle](14-openmeteo-vergleich.md) werden nur auf gemeinsamen gültigen Tagen und mit demselben Ertrag verglichen. Ein Median nahe eins allein ist keine hinreichende Genauigkeitskennzahl.

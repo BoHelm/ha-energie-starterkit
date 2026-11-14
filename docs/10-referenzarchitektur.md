@@ -161,3 +161,12 @@ Jede Phase liefert Dateien, Konfigurationsweg, getestete Beispiele und normale U
 Für jedes Modul festhalten: ausgewählt, Daten vorhanden, implementiert, fachlich getestet, live geprüft, offene Grenze. „Gleichartig“ ist erst erreicht, wenn die vereinbarten Bedien- und Rechenfälle mit anderen Entitätszuordnungen dieselben erwarteten Ergebnisse liefern. Eine exakt gleiche Grafik oder derselbe interne Programmcode ist dafür keine notwendige Bedingung und mit einem Prompt allein nicht garantierbar.
 
 Eine spätere Veröffentlichung lauffähiger Referenzmodule benötigt zusätzliche Portierung, Parametrisierung, Lizenz-/Datenschutzprüfung und Tests auf mindestens einer zweiten Anlagenkonfiguration. Das ist ein weiterer Entwicklungsschritt, kein bereits ausgelieferter Bestandteil dieses Dokuments.
+
+
+## 12. Ergänzende Datenverträge
+
+- [Historienvertrag](12-minutenhistorie-und-betrieb.md): schnelle Eingänge, vollständige/teilweise Minuten, Min/Max, gültige Sekunden, datierter Quellenwechsel und gemeinsamer Historienadapter. Beschränkte informative Tagespolitik als eigene Ableitung, nicht als ersetzte Messhistorie.
+- [CO₂-Vertrag](13-co2-stunden-und-speicher.md): gemeinsamer lokaler Stundenfaktor-Cache, zeitgerechte WP-/BEV-Energie, getrennte bekannte API-/Jahresmix-/ungeklärte Speicherkategorien und explizite Herkunftspolitik mit Geltungsbeginn. Rückwirkung ändert Ableitungen, nicht Fakten oder Buchungsidentität.
+- [Prognosevertrag](14-openmeteo-vergleich.md): je Modell Zieltag, ursprünglicher Snapshot, Quellzeit, Parameterrevision und Faktor; Vergleich auf gemeinsamen gültigen Tagen. Schattenparameter sind Teil des Modells und kein nachträglicher Austausch des Originals.
+
+Alle neuen Modelle und Parameter erscheinen in der Funktionsmatrix. Erst Grenzen prüfen, dann technische Umsetzung, dann Rücklese- und Normalansichtsabnahme. Keine nicht vorhandenen Module als installiert melden.

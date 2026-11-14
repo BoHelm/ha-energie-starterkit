@@ -23,3 +23,10 @@ Kritisch wird ein Rückstand, wenn nicht archivierte Detaildaten vor dem Recorde
 ## Anlagenzustand
 
 Eine lesende Übersicht bündelt letzte gültige Quellenmeldungen, gemeinsame Tagesdaten, fehlende Tage, Journalstatus, Archiv-/Backup-Erfolgszeit und freien Speicher. Unbekannt ist neutral, bestätigter Fehler auffällig, Erfolg braucht Beleg. Keine zusätzliche Steuerung daraus ableiten. Nach Änderungen gezielte Prüffälle ausführen; keine regelmäßigen Reparaturen ohne Fehlernachweis.
+
+
+## Minutenhistorie, SSD und Ersatzsystem
+
+Der [erweiterte Betriebsentwurf](12-minutenhistorie-und-betrieb.md) beschreibt die Trennung schneller Liveeingänge und Minutenhistorien, gebündelte Statistikimporte, Schreiblastmessung, eine unterstützte SSD-Datenlaufwerk-Verschiebung sowie zweite Backupkopie und isoliertes Ersatzgerät. Netzwerkfehler während der Diagnose nicht durch automatische Konfigurationsänderungen verdecken.
+
+API- und Modellarchive getrennt von der Rohhistorie sichern. Der [CO₂-Stunden-Cache](13-co2-stunden-und-speicher.md) muss nach Recorder-Ablauf frühere Bewertungen weiter ermöglichen; der [Prognosevergleich](14-openmeteo-vergleich.md) benötigt die ursprünglichen datierten Snapshots. Ein Vollbackup allein ist kein Ersatz für eine nachvollziehbare, versionierte Zeitreihenbasis.

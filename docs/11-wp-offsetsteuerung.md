@@ -12,6 +12,8 @@ Die witterungsgeführte Heizkurve bleibt erhalten. Ein manueller Basis-Offset ve
 | Automatik an, sonst | Basis +0 K |
 | Automatik aus | Basis bei bewusster Bedienung |
 
+**Der Zuschlag ist editierbar, nicht fest im Programmcode verdrahtet.** Die oben genannten +2 K sind ein synthetischer Beispielwert. Einen persistenten Tageszuschlag neben dem Basiswert im WP-Bereich anbieten; nach Geräteprüfung mit begrenztem Bereich und passendem Raster. Änderungen lösen denselben geprüften Zielabgleich aus wie eine Basisänderung. Basis und Zuschlag jeweils genau einmal addieren; Gesamtziel weiterhin gegen Gerätelimits prüfen. Ein restaurierter oder ungültiger Zuschlag darf keinen ungeprüften Gerätebefehl auslösen.
+
 **Außerhalb des Fensters entfällt nur der Zuschlag.** Beispiel: Basis −1 K bedeutet tagsüber +1 K, sonst −1 K. Bei Basis 0 K gilt tagsüber +2 K, sonst 0 K. Der Offset ist eine Temperaturdifferenz in K, keine feste Vorlauftemperatur in °C. Dieser feste Tagesplan ist noch keine wetterabhängige Optimierung und keine zugesicherte Energieeinsparung: Komfort, Heizflächen, Gebäudeträgheit, Thermostate und Außentemperatur können das Ergebnis verändern.
 
 ## Zuerst die echte Schnittstelle prüfen
@@ -33,7 +35,7 @@ Benötigt werden ein persistenter Basiswert, ein Automatikschalter, Initialisier
 
 Benutzerwerte sollen nach Neustart erhalten bleiben. Bei YAML-Helfern feste `initial`-Werte vermeiden, wenn sie Benutzeränderungen überschreiben würden; siehe [HA-Zahlenhelfer und Zustandswiederherstellung](https://www.home-assistant.io/integrations/input_number/). **Ein neuer Helfer ohne Anfangswert ist noch keine sichere Erstinitialisierung:** Ein technischer Mindest-/Standardwert darf niemals ungeprüft ans Gerät gelangen. Zuerst bei gesperrter Regel und ausgeschalteter Automatik den bestätigten bisherigen Offset übernehmen, zurücklesen und erst dann den Initialisierungsnachweis setzen. Aktivierung danach separat freigeben.
 
-Bedienort **Haus → Wärmepumpe**, direkt unter dem Gerätestatus: Basiswert, Automatikschalter, gewünschter und gemeldeter Offset, Steuerstatus und manuelles Anwenden. Lange Erklärung weiter unten, insbesondere auf dem Handy. Keine zweite konkurrierende Eingabestelle unter Anlagenparameter. Vorhandene reine Statuskarten dürfen bleiben; Hinweise wie „gesamte Ansicht ausschließlich lesend“ müssen an die neue Steuerfunktion angepasst werden. Ist keine Hausansicht vorhanden, einen gleichwertigen WP-Bereich verwenden; andere Hausmodule gehören weiterhin nicht zum Kit.
+Bedienort **Haus → Wärmepumpe**, direkt unter dem Gerätestatus: Basiswert, editierbarer Tageszuschlag, Automatikschalter, gewünschter und gemeldeter Offset, Steuerstatus und manuelles Anwenden. Lange Erklärung weiter unten, insbesondere auf dem Handy. Keine zweite konkurrierende Eingabestelle unter Anlagenparameter. Vorhandene reine Statuskarten dürfen bleiben; Hinweise wie „gesamte Ansicht ausschließlich lesend“ müssen an die neue Steuerfunktion angepasst werden. Ist keine Hausansicht vorhanden, einen gleichwertigen WP-Bereich verwenden; andere Hausmodule gehören weiterhin nicht zum Kit.
 
 ## Ablauf und Ausfälle
 
@@ -56,3 +58,5 @@ Bei ausgeschaltetem HA oder ausgefallener Cloud kann HA keine rechtzeitige Rück
 Mindestens prüfen: 09:59/10:00/15:59/16:00 Uhr, positive/negative Basis, Automatik aus, ausschalten im Tagesfenster, identisches Ziel, ungültiger Zielbereich und Raster, fehlende/restaurierte/veraltete/zukünftige Werte, anderer Sollwertmodus und ausgeschaltete Heizung. Wiederanlauf, verpasste Umschaltung, Cloudfehler, Sendequoten und Wiederholungsgrenze separat prüfen. Keine echte gefährliche Betriebsstörung zum Test auslösen. Ein noch nicht beobachteter späterer Umschalttermin oder echter Ausfall bleibt als ungeprüft gekennzeichnet.
 
 Vorher-/Nachher-Nachweis: gleiche Heizkurve und Warmwassereinstellungen, unveränderte Schutzgrenzen und Herstellerzeitfenster, Offset-Rücknahme, persistenter Basiswert und Schalter. Ein bestandener Dokumenttest dieses Repositorys ist keine erfolgreiche Anlagenabnahme. Es wird keine automatische COP-/Komfortoptimierung aus elektrischer Leistung oder Außentemperatur allein versprochen.
+
+Zusätzlich für den editierbaren Zuschlag prüfen: null, positiver Wert, ungültiger Wert, Neustart mit erhaltenem Wert, Änderung innerhalb/außerhalb des Fensters und Summe außerhalb des Gerätebereichs. Außerhalb gilt allein der Basiswert; die Ausschalt- und Fehlerregeln bleiben gleich.
