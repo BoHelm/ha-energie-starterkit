@@ -8,8 +8,9 @@ Eine ausführliche Bauanleitung und ein anpassbarer KI-Arbeitsauftrag für eine 
 
 - PV-Leistung und Energieflüsse, Autarkie und Netzbezug mit nachvollziehbaren Messgrenzen.
 - Batterie: SoC, dynamische Mindestskala, Energie, äquivalente Vollzyklen und SoH, soweit nachgewiesen.
-- Solarprognose: vorab gespeicherte Prognose, Tagesvergleich und sichtbare Datenqualität.
-- Kosten- und CO₂e-Burndown: Tagesjournal, Komponenten, Preiszeiträume und editierbare Modellannahmen.
+- Solarprognose: vorab gespeicherte Prognose, Tagesvergleich und sichtbare Datenqualität; optional zweites Open-Meteo-Flächenmodell mit fairem Modellvergleich.
+- Kosten- und CO₂e-Burndown: robuste informative Tagesberichte, Komponenten, Preiszeiträume und editierbare Modellannahmen.
+- Optional: stündlicher CO₂-API-Cache, Jahresmix-Fallback und Netz-/Hausvergleich mit Batterieherkunft und ausdrücklich gewählter PV-Annahme.
 - Kompakte Tabletansicht, mobile Darstellung und einheitliche Pastellfarben.
 - Wärmepumpe: Innen-/Außenenergie, optional Herstellervergleich, Heizung/Warmwasser als getrenntes Modell.
 - Optional: WP-Heizkurven-Offset mit manuellem Basiswert und zuschaltbarem Tageszuschlag; siehe [WP-Offsetsteuerung](docs/11-wp-offsetsteuerung.md).
@@ -35,6 +36,9 @@ Der Prompt startet mit einer Bestandsaufnahme. Er darf fehlende Sensoren nicht e
 | --- | --- |
 | [Referenzarchitektur](docs/10-referenzarchitektur.md) | Bausteine, Datenverträge, Abläufe und konkrete Ansichten |
 | [WP-Offsetsteuerung](docs/11-wp-offsetsteuerung.md) | Optionale Bedienung und geprüfte Freigabe einer bestehenden Witterungskurve |
+| [Minutenhistorie und Betrieb](docs/12-minutenhistorie-und-betrieb.md) | Schnelle Livewerte, sparsame Historie, Tagesberichte, SSD und Backup |
+| [CO₂-Stunden und Speicher](docs/13-co2-stunden-und-speicher.md) | API-Cache, Netz-/Hauskurven und Herkunftsannahmen |
+| [Open-Meteo-Modellvergleich](docs/14-openmeteo-vergleich.md) | Teilflächen, Sonnenstandsverschattung und unabhängige Güteprüfung |
 | [Module](docs/03-module.md) | Funktionsumfang und optionale Erweiterungen |
 | [Rechenregeln](docs/04-berechnungen.md) | Energie, Prognosefehler, Geld, CO₂e, WP und Verluste |
 | [Datenqualität](docs/05-datenqualitaet.md) | Fehlende/veraltete Daten, Teilwerte, Ersatzwerte |
@@ -58,3 +62,5 @@ Die Prüfung untersucht Dateien, Struktur, Links und typische sensible Muster. S
 Nur synthetische Beispiele einstellen. Keine vollständigen HA-Diagnosen, Datenbanken, Backups, Konfigurationen, Original-Screenshots oder Messdaten veröffentlichen. [Beitragsregeln](CONTRIBUTING.md) und [Datenschutz](docs/07-datenschutz.md) beachten.
 
 Lizenz der neu verfassten Texte und Vorlagen: [MIT](LICENSE). Externe Integrationen, Karten und Herstellerunterlagen behalten ihre eigenen Lizenzen; sie werden nicht mitgeliefert.
+
+Aktueller Dokumentationsstand und Erweiterungen: [Änderungsübersicht](CHANGELOG.md). Neue Fachdateien gehören zum vollständigen KI-Arbeitsauftrag.
