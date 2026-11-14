@@ -6,7 +6,7 @@ Diesen Text zusammen mit der ausgefüllten **privaten** Anlagenbeschreibung in e
 
 ---
 
-Du unterstützt mich beim Aufbau einer zuverlässigen, verständlichen Home-Assistant-Energieauswertung. Arbeite auf Deutsch. Lies zuerst `AGENTS.md`, meine private Anlagenbeschreibung und alle zehn Fachdateien im Ordner `docs`, insbesondere `docs/03-module.md`, `docs/04-berechnungen.md`, `docs/05-datenqualitaet.md`, `docs/06-abnahme.md` und `docs/10-referenzarchitektur.md`. Prüfe vor Beginn, ob du diese Dateien tatsächlich lesen konntest. Wenn sie nicht bereitgestellt sind, nenne die fehlenden Dateien und beschaffe sie aus dem freigegebenen Repository; ersetze fehlende Spezifikation nicht durch frei erfundene Details. Erhalte bestehende Konfiguration und ergänze gezielt. Das Ziel ist eine an meine Anlage angepasste Implementierung, keine wörtliche Installation einer fremden Hauskonfiguration.
+Du unterstützt mich beim Aufbau einer zuverlässigen, verständlichen Home-Assistant-Energieauswertung. Arbeite auf Deutsch. Lies zuerst `AGENTS.md`, meine private Anlagenbeschreibung und alle Fachdateien im Ordner `docs`, insbesondere `docs/03-module.md`, `docs/04-berechnungen.md`, `docs/05-datenqualitaet.md`, `docs/06-abnahme.md` und `docs/10-referenzarchitektur.md`. Prüfe vor Beginn, ob du diese Dateien tatsächlich lesen konntest. Wenn sie nicht bereitgestellt sind, nenne die fehlenden Dateien und beschaffe sie aus dem freigegebenen Repository; ersetze fehlende Spezifikation nicht durch frei erfundene Details. Erhalte bestehende Konfiguration und ergänze gezielt. Das Ziel ist eine an meine Anlage angepasste Implementierung, keine wörtliche Installation einer fremden Hauskonfiguration.
 
 ## 1. Arbeitsauftrag und Ergebnis
 
@@ -138,7 +138,23 @@ Ordne Preisquellen bei optionaler API zu: gültige frische API, gültiges datier
 
 WP/Wetter: Summe und Innenenergie getrennt validieren. Innen1kWh/Außen9kWh ergeben Gesamt10kWh und Innen1kWh; Innen allein kann bei fehlendem Außenwert sichtbar bleiben, die Summe bleibt dann offen. XLSX muss Innenenergie sowie getrennte Abdeckungs-/Qualitätsspalten enthalten. Explizite Ausfälle unterbrechen Kurven, Wetter-Teilmittel bleiben klar markiert. Zeitzone und tatsächliche Tageslänge gehören in die Auswertung.
 
-## 15. Abschluss ohne übertriebene Nachbauzusage
+## 15. Erweiterungen für Historie, Prognosen und CO₂
+
+Lies zusätzlich `docs/12-minutenhistorie-und-betrieb.md`, `docs/13-co2-stunden-und-speicher.md` und `docs/14-openmeteo-vergleich.md` vollständig. Nimm diese Anforderungen in die Bestandsaufnahme und den Umsetzungsplan auf, ohne optionale Module automatisch zu aktivieren.
+
+Trenne schnelle Originaleingänge für Live/Schutz von zeitgewichteten abgeschlossenen Minutenhistorien. Inventarisiere alle historischen Verbraucher einschließlich nativer Energy-Statistiken; migriere und prüfe sie vor dem Abschalten unnötiger Rohhistorie. Altdaten erhalten, Umschaltzeit je Quellgruppe persistent. Datenabdeckung, Min/Max und zeitgleiche Ladebedingungen erhalten. Statistikimporte bündeln und Schreiblast über vergleichbare längere Fenster messen. Keine bestimmte SSD-Lebensdauer oder völlige Entlastung des internen Speichers versprechen.
+
+Frage für informative Tagesberichte nach maximaler Pause und gewünschter Ersatzregel. Komponenten mit echten Daten behalten; nur fehlende Anteile kennzeichnen und begrenzt schätzen, keine Schätzungsketten oder Doppeladdition bereits integrierter Mengen. Nach einer Lücke echte Werte wieder verwenden. Die gelockerte informative Tagespolitik nicht auf Schutz oder unabhängige Prognosegüte übertragen.
+
+Für eine zweite Prognose bestehende Ansicht separat ergänzen, Teilflächen einzeln modellieren und räumliche Freigabe des Wetterabrufs klären. Beide Modelle zunächst mit identischem Prognose-Korrekturfaktor und gleichem Zieltag festschreiben. Schattenprofil nach Sonnenstand editierbar machen; wechselnden Blattschatten nicht unbegründet pauschal abziehen. Rangfolge nur aus gemeinsamen gültigen Originalprognosen gegen denselben unabhängigen Bruttoertrag. Kein wirtschaftlicher Nutzfaktor zusätzlich im Prognosevergleich.
+
+Bei CO₂-Stundenbewertung gemeinsame stündliche Anbieterabfrage und lokalen Cache nutzen. WP/BEV energiegewichtet zuordnen; fehlende Faktoren oder nicht belegbare Stundenverteilung mit zeitlich passendem Jahresmix kennzeichnen. Netz-/Hauskurven bleiben eine getrennte Bilanz, mit Datenlücken, Anteilvergleich und Prozentreduktion. Eigene PV-Betriebsbilanz und vollständigen Lebenszyklus klar unterscheiden.
+
+Frage ausdrücklich nach dem Umgang mit ungeklärter Speicherherkunft: Aussage offen, Jahresmix-Ersatz oder freigegebene PV-Annahme. Erfasse Beginn und Modellversion. Eine PV-Annahme darf nur die unbekannte CO₂-Kategorie auf null setzen. Belegte Netzladungen behalten ihren Ladestundenfaktor oder API-Fallback, auch über eine rückwirkende Modellgrenze hinweg. Herkunftskette neu berechnen, Rohdaten und Finanzjournal nicht verändern. Angenommene PV-kWh sichtbar halten. Keine private Betreiberentscheidung als allgemeine Voreinstellung übernehmen.
+
+SSD-Migration und zweite Sicherung nur nach eindeutiger Laufwerkszuordnung und gesonderter Freigabe. Wiederherstellung mit getrenntem Testgerät prüfen; keine konkurrierende aktive Steuerinstanz. Netzwerkfehler erst zeitlich mit echten Datenpausen abgleichen; nichts während einer beauftragten Nur-Lese-Analyse umstellen.
+
+## 16. Abschluss ohne übertriebene Nachbauzusage
 
 Erzeuge einen ausführbaren Installations-/Migrationsweg für die konkrete Zielanlage, keine bloße Textbeschreibung. Nenne erforderliche Integrationen und Ressourcen, sichere vorhandene Stände und liefere einen gezielten Rückbau. Erzeuge ein privates Betriebsdokument mit Quellen, Formeln, Annahmen, Datenbeginn, Fehlerbehandlung und noch unbeobachteten geplanten Läufen.
 
