@@ -8,13 +8,14 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 EXPECTED = {
-    'README.md', 'AGENTS.md', 'LICENSE', 'CONTRIBUTING.md', '.gitignore',
+    'README.md', 'AGENTS.md', 'LICENSE', 'CONTRIBUTING.md', '.gitignore', 'CHANGELOG.md',
     'prompts/MASTER-PROMPT.md', 'config/anlage.vorlage.json', 'config/demo.json',
     'scripts/check_release.py', 'tests/test_release.py',
     *{f'docs/{name}.md' for name in (
         '01-einrichtung', '02-sensoren-und-parameter', '03-module',
         '04-berechnungen', '05-datenqualitaet', '06-abnahme',
-        '07-datenschutz', '08-betrieb', '09-status-und-grenzen', '10-referenzarchitektur', '11-wp-offsetsteuerung')},
+        '07-datenschutz', '08-betrieb', '09-status-und-grenzen', '10-referenzarchitektur', '11-wp-offsetsteuerung',
+        '12-minutenhistorie-und-betrieb', '13-co2-stunden-und-speicher', '14-openmeteo-vergleich')},
 }
 PATTERNS = {
     'email': r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b',
