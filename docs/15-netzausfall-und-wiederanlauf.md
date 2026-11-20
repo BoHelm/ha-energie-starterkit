@@ -89,7 +89,20 @@ Die folgenden Zahlen sind frei gewählte Beispiele, keine Einstellungen einer ve
 
 Zusätzlich Parametergrenzen 10/120, ungültige Werte darunter/darüber, fehlenden Parameter, erneuten Ausfall, teilweisen Schreibfehler und Kommunikationsabbruch zwischen zwei Programmen prüfen. Keine synthetischen SoC-/Netzzustände in reale Schutzsensoren schreiben und keinen echten gefährlichen Netzausfall zum Test auslösen. Gerätewirkung erst bei gesondert freigegebenem sicheren Test oder tatsächlichem Ereignis beobachten.
 
-In einer Referenzumsetzung wurden die ursprüngliche feste Zehn-Minuten-Logik mit 59 isolierten HA-Templatefällen, Konfiguration, Rücklesen und unverändertem Normalbetrieb geprüft. Die editierbare Frist wurde zusätzlich mit 18 isolierten Fällen für 10/60/120 Minuten, Fristgrenzen, Verkürzen/Verlängern, ungültige Parameter und Untergrenzen-Vorrang geprüft. Diese Prüfungen beweisen keine physische Ladeunterdrückung und keine universelle Gerätekompatibilität. Der vollständige reale Ausfall-/Wiederanlaufzyklus war bei dieser Dokumentation noch nicht beobachtet. Eigene Tests und offene Prüfungen pro Zielanlage festhalten; keine erfolgreiche Live-Abnahme aus Repositorytests ableiten.
+In einer Referenzumsetzung wurden die ursprüngliche feste Zehn-Minuten-Logik mit 59 isolierten HA-Templatefällen, Konfiguration, Rücklesen und unverändertem Normalbetrieb geprüft. Die editierbare Frist wurde zusätzlich mit 18 isolierten Fällen für 10/60/120 Minuten, Fristgrenzen, Verkürzen/Verlängern, ungültige Parameter und Untergrenzen-Vorrang geprüft. Diese Prüfungen beweisen keine physische Ladeunterdrückung und keine universelle Gerätekompatibilität. Ein realer Ausfall-/Wiederanlaufzyklus wurde inzwischen beobachtet; Umfang und Grenzen stehen im folgenden Praxistest. Eigene Tests und offene Prüfungen pro Zielanlage festhalten; keine erfolgreiche Live-Abnahme aus Repositorytests ableiten.
+
+## Beobachteter Praxistest am 20.11.2026
+
+In einer Referenzumsetzung wurde ein vom Betreiber durchgeführter Ausfall-/Wiederanlaufzyklus erfolgreich beobachtet. Dokumentiert werden hier nur das Verhalten und gerundete Zeitabstände, keine privaten Anlagenkennungen oder Originalmessdateien.
+
+- Die Netzausfallmeldung kam auf dem Betreibertelefon an. Eine laufende Fahrzeugladung wurde einmal automatisch gestoppt; der Betreiber bestätigte den Stillstand und konnte sie anschließend bewusst manuell wieder starten, ohne erneuten Stopp durch dieselbe Ausfallregel. Diese ergänzende Fahrzeugfunktion benötigt eine eigene sichere Fahrzeugzuordnung und Freigabe; sie ist keine harte Wallboxabschaltung.
+- Die sechs Programm-SoC-Ziele folgten dem fallenden Ist-SoC mit einem Prozentpunkt Abstand. Die abgesenkten Werte wurden am Gerät zurückgelesen.
+- Bei der Netzrückkehr gab es eine Datenpause der Deye-Werte. HA bestätigte die Rückkehr deshalb erst ungefähr zwei Minuten nach der vom Betreiber gemeldeten mechanischen Zuschaltung. Die Ursache der Datenpause ist durch diesen Test nicht abschließend geklärt.
+- **Die eingestellten zehn Minuten begannen erst mit dieser bestätigten HA-Erkennung.** Die tatsächliche Zeit ab mechanischer Zuschaltung war entsprechend länger. Eine Datenpause darf nicht rückwirkend als sicher bekannte Netzverfügbarkeit behandelt werden.
+- Während des Wartens blieben alle sechs Ziele abgesenkt. Die Versorgung des Hauses aus dem Netz war erwünscht und ist von der Batterienachladung zu unterscheiden. Zuletzt war die Batterieleistung praktisch null; ein kurzer Ladewert in einer Übergangsminute wurde beobachtet. Eine vollständig ladungsfreie Übergangsphase wird daher nicht behauptet.
+- Gut zehn Minuten nach bestätigter Erkennung gab HA die saisonale Reserve frei. Die sechs Programme wurden nacheinander zurückgestellt und vollständig zurückgelesen. Anschließend begann die deutliche Batterienachladung; der Betreiber bestätigte sie.
+
+Damit sind diese Abläufe für diesen einzelnen Test praktisch belegt. Nicht separat getestet wurden unter anderem die wiederholte Ausfallmeldung nach 30 Minuten, der Generatorhinweis bei niedrigem SoC und der Empfang auf jedem weiteren Telefon. Keine allgemeine Firmwarekompatibilität, harte Ladesperre oder Verfügbarkeit bei beliebigen HA-, Internet- und Geräteausfällen daraus ableiten. Schutzgrenzen blieben unverändert.
 
 ## Optional: Notstromstatus an eine Community-Plattform
 
