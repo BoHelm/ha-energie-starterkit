@@ -21,6 +21,7 @@ Der Master-Prompt muss gemeinsam mit allen Fachdateien im Ordner `docs` und der 
 - Gezielt3kW Netzladung/-einspeisung, CAN-Zellauslesung und feste Balancing-Ladepläne sind keine zugesagten Standardfunktionen dieses Kits.
 - Wetterdaten ersetzen keine Wärmemengenmessung. Innenstrom ist ohne Schaltplan kein reiner Heizstabverbrauch.
 - Optionale WP-Offsetsteuerung ist eine hardwareabhängige Spezifikation, kein universeller Daikin-Treiber oder garantierte COP-Optimierung. Bei Cloud-/HA-Ausfall ist eine pünktliche Rücknahme nicht garantiert. Gerätebefehle bleiben standardmäßig aus.
+- Optionale [Nachladeverzögerung](15-netzausfall-und-wiederanlauf.md) nutzt nur gesondert freigegebene Programm-SoC. Sie reduziert vorübergehend die saisonale Reserve, ist firmwareabhängig und keine harte Ladesperre. Der reale Ausfallzyklus bleibt bis zur Beobachtung offen; keine Garantie bei HA-/Kommunikationsausfall oder SoC-Sprung. Der Parameterbereich 10–120 Minuten ist ein Bedienkonzept, keine behauptete Netzanschlussvorschrift.
 - Datenschutzprüfung ist regelbasiert plus manuell. Keine mathematische Garantie völliger Anonymität und keine Anonymisierung des GitHub-Profils.
 
 ## Weiterentwicklung

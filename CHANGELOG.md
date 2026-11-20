@@ -1,5 +1,12 @@
 # Änderungen der Spezifikation
 
+## 2026-11-20
+
+- [Netzausfall und Wiederanlauf](docs/15-netzausfall-und-wiederanlauf.md): optionale Verzögerung der Batterie-Nachladung ausschließlich über separat freigegebene Programm-SoC. Fallenden Ist-SoC vor Netzrückkehr nachführen, Untergrenze schützen und saisonale Reserve anschließend wiederherstellen.
+- Persistenter Parameter 10–120 Minuten, während Ausfall und Wartezeit editierbar; Frist immer ab bestätigter Netzrückkehr. Verkürzung kann unmittelbar zur Freigabe führen, Untergrenzen-Vorrang bleibt bestehen.
+- Zustandsautomat, manueller Vorrang, Neustart/Datenlücken, begrenzte Wiederholungen und Rücklesekontrolle präzisiert. Keine harte Ladesperre oder zugesicherte Gerätereaktion aus Dokumenttests ableiten; realen Ausfallzyklus getrennt abnehmen.
+- Optionale ausdrückliche Notstrommeldung an eine freigegebene Community-API beschrieben; Sendesignal und echte Messung trennen. Master-Prompt, Modulübersicht, Betrieb, Abnahme und Dateifreigabeliste ergänzt. Keine private Konfiguration oder Messdaten veröffentlicht.
+
 ## 2026-11-14
 
 Diese Fassung erweitert die Bauanleitung; sie enthält weiterhin keine direkt installierbare Integration und keine private HA-Konfiguration.

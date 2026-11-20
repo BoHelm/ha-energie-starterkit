@@ -16,6 +16,8 @@ Gesamtladung MWh, äquivalente Vollzyklen gesamt und je ausgewähltem Monat/Jahr
 
 Speicher-Gauge: untere Skala dynamisch aus gültigem Mindest-SoC, obere100%; Zahl weiterhin absoluter SoC. Optional markierte gleichzeitige Netzaufnahme beim Laden ist nur Gleichzeitigkeit, kein Herkunftsnachweis. Schutz- und Alarmfunktionen werden separat projektiert; keine fremden Prozent-/Spannungsgrenzen übernehmen. Modul-/Zellwerte nur mit belegter Datenquelle; Gesamtspannung ersetzt keine Zellspannungen.
 
+Optional und nur nach gesonderter Freigabe: [verzögerte Nachladung nach Netzausfall](15-netzausfall-und-wiederanlauf.md). Vorhandene Programm-SoC im Ausfall nachführen, geschützte Untergrenze erhalten und nach Netzrückkehr eine editierbare Wartezeit von 10–120 Minuten abwarten. Die saisonale Reserve bleibt ein eigener Wert. Hauptschalter, persistente Phase, Frische und Rücklesekontrolle vorsehen. Keine zusätzliche Netzlade-/EMS-Steuerung und keine garantierte harte Ladesperre daraus ableiten.
+
 ## Solarprognose
 
 Aktuelle Prognose und vorab gespeicherter Folgetagswert mit Datum. Snapshotzeit lokal konfigurierbar. Abweichung für abgeschlossene Tage sowie7-/31-Tage und Kalenderjahr, alle mit klarer Definition. Jahresdiagramm über volle Breite. Qualitätsstatus, Tagesertrag und Datenbeginn sichtbar; historische ungeprüfte Anzeigen nicht in geprüfte Kennzahlen mischen.

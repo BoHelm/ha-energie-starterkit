@@ -154,6 +154,14 @@ Frage ausdrücklich nach dem Umgang mit ungeklärter Speicherherkunft: Aussage o
 
 SSD-Migration und zweite Sicherung nur nach eindeutiger Laufwerkszuordnung und gesonderter Freigabe. Wiederherstellung mit getrenntem Testgerät prüfen; keine konkurrierende aktive Steuerinstanz. Netzwerkfehler erst zeitlich mit echten Datenpausen abgleichen; nichts während einer beauftragten Nur-Lese-Analyse umstellen.
 
+### Optional: Nachladung nach Netzausfall verzögern
+
+Lies `docs/15-netzausfall-und-wiederanlauf.md`. Dieses Modul standardmäßig aus lassen und separat nach Betreiberwunsch, Gerätefähigkeit und erlaubten Programm-SoC-Schreibrollen freigeben. Keine weitere Wechselrichter-Stellgröße, technische Schutzgrenze oder Zeitfenster ändern. Bestehende Saisonautomatik und temporäre Ziele in einem abgestimmten Schreiber zusammenführen.
+
+Während bestätigtem Ausfall Ziel dem fallenden gültigen Ist-SoC minus einem Prozentpunkt nachführen, betriebliche Untergrenze erhalten und bei PV-Anstieg nicht wieder erhöhen. Nur abweichende Programme schreiben, keine festen langen Schreibintervalle. Nach Netzrückkehr temporäres Ziel bis zur gewählten Wartezeit halten; an der Untergrenze hat Nachladung Vorrang. Persistenter manueller Parameter 10–120 Minuten, während Ausfall und Wartezeit editierbar. Frist ab bestätigtem Rückkehrbeginn, nicht ab letzter Bedienung. Verkürzen unter vergangene Zeit kann sofort freigeben. Kein fester YAML-Initialwert darf gespeicherte Wahl bei Neustart überschreiben.
+
+Frische, Restaurierung, Phase, Ziel und Hauptschalter vor jedem Befehl prüfen. Keine Ersatznull und keine erfundenen Rückkehrzeitpunkte. Datenpause, erneuten Ausfall, Neustart, verpasste Frist, Teil-Schreibfehler und begrenzten Retry testen. Wirksames Ziel, saisonale Reserve, Untergrenze und verbleibende Wartezeit getrennt anzeigen. Ausschalten respektiert manuelle Einstellungen; kein automatisches Zurückschreiben im Hintergrund. Tatsächliche Ladeunterdrückung separat nachweisen; keine harte Ladesperre, maximale Netzleistung oder Netzanschlussvorschrift behaupten. Referenzprüfungen sind keine Abnahme der Zielanlage.
+
 ## 16. Abschluss ohne übertriebene Nachbauzusage
 
 Erzeuge einen ausführbaren Installations-/Migrationsweg für die konkrete Zielanlage, keine bloße Textbeschreibung. Nenne erforderliche Integrationen und Ressourcen, sichere vorhandene Stände und liefere einen gezielten Rückbau. Erzeuge ein privates Betriebsdokument mit Quellen, Formeln, Annahmen, Datenbeginn, Fehlerbehandlung und noch unbeobachteten geplanten Läufen.

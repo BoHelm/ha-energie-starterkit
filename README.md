@@ -8,6 +8,7 @@ Eine ausführliche Bauanleitung und ein anpassbarer KI-Arbeitsauftrag für eine 
 
 - PV-Leistung und Energieflüsse, Autarkie und Netzbezug mit nachvollziehbaren Messgrenzen.
 - Batterie: SoC, dynamische Mindestskala, Energie, äquivalente Vollzyklen und SoH, soweit nachgewiesen.
+- Optional und gesondert freizugeben: [verzögerte Nachladung nach Netzausfall](docs/15-netzausfall-und-wiederanlauf.md) über vorhandene Programm-SoC, mit editierbarer Wartezeit von 10–120 Minuten und erhaltenen Schutzgrenzen.
 - Solarprognose: vorab gespeicherte Prognose, Tagesvergleich und sichtbare Datenqualität; optional zweites Open-Meteo-Flächenmodell mit fairem Modellvergleich.
 - Kosten- und CO₂e-Burndown: robuste informative Tagesberichte, Komponenten, Preiszeiträume und editierbare Modellannahmen.
 - Optional: stündlicher CO₂-API-Cache, Jahresmix-Fallback und Netz-/Hausvergleich mit Batterieherkunft und ausdrücklich gewählter PV-Annahme.
@@ -39,6 +40,7 @@ Der Prompt startet mit einer Bestandsaufnahme. Er darf fehlende Sensoren nicht e
 | [Minutenhistorie und Betrieb](docs/12-minutenhistorie-und-betrieb.md) | Schnelle Livewerte, sparsame Historie, Tagesberichte, SSD und Backup |
 | [CO₂-Stunden und Speicher](docs/13-co2-stunden-und-speicher.md) | API-Cache, Netz-/Hauskurven und Herkunftsannahmen |
 | [Open-Meteo-Modellvergleich](docs/14-openmeteo-vergleich.md) | Teilflächen, Sonnenstandsverschattung und unabhängige Güteprüfung |
+| [Netzausfall und Wiederanlauf](docs/15-netzausfall-und-wiederanlauf.md) | Vorbereitete SoC-Ziele, einstellbare Wartezeit, Datenfehler und Grenzen |
 | [Module](docs/03-module.md) | Funktionsumfang und optionale Erweiterungen |
 | [Rechenregeln](docs/04-berechnungen.md) | Energie, Prognosefehler, Geld, CO₂e, WP und Verluste |
 | [Datenqualität](docs/05-datenqualitaet.md) | Fehlende/veraltete Daten, Teilwerte, Ersatzwerte |

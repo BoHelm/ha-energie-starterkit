@@ -30,3 +30,10 @@ Eine lesende Übersicht bündelt letzte gültige Quellenmeldungen, gemeinsame Ta
 Der [erweiterte Betriebsentwurf](12-minutenhistorie-und-betrieb.md) beschreibt die Trennung schneller Liveeingänge und Minutenhistorien, gebündelte Statistikimporte, Schreiblastmessung, eine unterstützte SSD-Datenlaufwerk-Verschiebung sowie zweite Backupkopie und isoliertes Ersatzgerät. Netzwerkfehler während der Diagnose nicht durch automatische Konfigurationsänderungen verdecken.
 
 API- und Modellarchive getrennt von der Rohhistorie sichern. Der [CO₂-Stunden-Cache](13-co2-stunden-und-speicher.md) muss nach Recorder-Ablauf frühere Bewertungen weiter ermöglichen; der [Prognosevergleich](14-openmeteo-vergleich.md) benötigt die ursprünglichen datierten Snapshots. Ein Vollbackup allein ist kein Ersatz für eine nachvollziehbare, versionierte Zeitreihenbasis.
+
+
+## Optionaler Netzwiederanlauf
+
+Die [verzögerte Nachladung](15-netzausfall-und-wiederanlauf.md) ergänzt ausschließlich gesondert freigegebene Programm-SoC-Schreibrollen. Phase, temporäres Ziel, Rückkehrbeginn und Warteparameter persistent sichern. Parameter neben der Saisonreserve editierbar; Änderung während des Ausfalls ist möglich, spätere Frist läuft ab Netzrückkehr. Bei Änderung während der Wartezeit kann eine verkürzte Frist bereits abgelaufen sein.
+
+Bei HA-/Kommunikationsausfall bleiben geschriebene Werte möglicherweise länger bestehen. Hauptschalter aus lässt manuelle Werte unangetastet und ist kein stilles Zurücksetzen. Rückbau deshalb mit aktuellem Anlagenzustand und gesicherter Originalfassung planen. Den nächsten tatsächlichen Ausfall und Wiederanlauf zur Abnahme beobachten, ohne dafür eine gefährliche Unterbrechung auszulösen. Anzeige eines passenden Ziels allein beweist keinen vermiedenen Ladestart.

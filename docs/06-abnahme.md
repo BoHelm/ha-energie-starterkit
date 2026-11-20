@@ -70,3 +70,12 @@ Pro Test Ergebnis, Version und Prüfgrenze lokal festhalten. „Noch nicht gepr�
 - Gleiche SSD-Modelle eindeutig unterscheiden, aktives Laufwerk schützen, Backup zurücklesen und Wiederherstellung isoliert erproben. Keine zweite aktive Steuerinstanz gegen die echte Anlage.
 
 Diese Fälle sind Abnahmeaufträge für die spätere individuelle Implementierung. Die Dokumenttests des Kits führen sie nicht auf einer HA-Installation aus.
+
+
+## H. Optional freigegebene verzögerte Nachladung
+
+Die [Fälle für Netzausfall und Wiederanlauf](15-netzausfall-und-wiederanlauf.md) mit synthetischen Eingängen prüfen. Nachführung bei sinkendem SoC, kein Wiederanheben bei PV-Ladung, Mindestgrenze, bereits identische Ziele und nur ausdrücklich erlaubte Programm-SoC-Schreibrollen. Zeiten, Ladearten, technische Schutzparameter und andere Gerätefunktionen vor/nach unverändert belegen.
+
+Warteparameter 10/60/120 Minuten, jeweilige Frist unmittelbar davor/danach, Änderung während Ausfall und laufender Wartezeit, Verlängern sowie Verkürzen unter bereits vergangene Zeit. Rückkehrbeginn darf durch Bedienung nicht unbemerkt neu gesetzt werden. Ungültiger oder restaurierter Parameter sperrt normale Zeitfreigabe; Untergrenzen-Vorrang bleibt erhalten.
+
+Neustart mit persistentem Zustand, Datenpause, erneuter Ausfall und Aus-/Einschalten des Hauptschalters prüfen. Vor jedem einzelnen Befehl erneut validieren. Teilweiser Schreibfehler erzeugt nachvollziehbaren begrenzten Retry und Warnung ohne Warnflut. Keine realen Schutzsensoren für Tests fälschen. Konfiguration/HA-Rücklesen, Geräteparameter und tatsächlich vermiedenen Ladebeginn getrennt abnehmen. Ein noch nicht beobachteter echter Ausfallzyklus bleibt ausdrücklich offen.
