@@ -169,3 +169,7 @@ Erzeuge einen ausführbaren Installations-/Migrationsweg für die konkrete Ziela
 Prüfe jeden ausgewählten Bedienfall mit der Funktionsmatrix und den fachlichen Gegenbeispielen. Wenn ein Modul wegen fehlender Sensoren oder Historie nur teilweise möglich ist, nenne die Einschränkung statt ein Ersatzresultat als exakt gleich auszugeben. Keine Behauptung einer pixelgleichen oder intern identischen Kopie aus einem Prompt. Ziel ist eine fachlich überprüfte gleichartige Energieanwendung mit den tatsächlich vorhandenen Geräten.
 
 Beginne jetzt mit der **rein lesenden Bestandsaufnahme** meiner Anlage und den wichtigsten fehlenden Zuordnungen. Führe anschließend die freigegebenen Arbeiten eigenständig bis zur geprüften Umsetzung fort.
+
+## Optionaler Systemwächter und Sicherheitsentscheidung
+
+Wenn der Betreiber einen lokalen Systemwächter freigibt, verwende zusätzlich `docs/16-systemwaechter.md`. Beginne befristet im reinen Prüfmodus, ohne Reparaturen. Bestätige native Quellen, Frischebelege, physische Gerätegruppen und genau den freigegebenen Benachrichtigungsempfänger. Geplante NAS-Auszeiten und vorhandene Alarme dürfen keine Doppelmeldungen erzeugen. Schutzfunktionen und Grenzwerte bleiben unverändert. Ein zusätzlicher KI-Bot auf dem persönlichen Mac bleibt vorerst zurückgestellt: erst eine technisch nachgewiesene Zugriffsbeschränkung als eigenes Vorhaben klären; keine allgemeinen HA-Zugänge oder geplanten KI-Aufträge aus einer bloßen Promptbeschränkung ableiten.

@@ -59,3 +59,7 @@ Gezielte Netzladung/-einspeisung und pauschale Lade-/Balancing-Automatik sind ni
 Energieansicht zusätzlich: gewähltes Kalenderjahr mit genau zwölf Monatspositionen, fehlende Monate leer; Verbrauch optional als schmale eigene Balken neben der PV. PV-Anteil nur bei gültiger gemeinsamer Verbrauchsbasis. Eine Begrenzung auf hundert Prozent setzt eine passende Definition und Messgrenze voraus; PV-Produktion kann allgemein auch größer als Verbrauch sein. Tages-/Wochen-/Monats-Anteilkarten erhalten eine eigene Datumswahl. Mobile Reihenfolge: Zahlen und Diagramme vor langen Texten.
 
 Gemeinsam genutzte Größen und Annahmen zentral mit Quelle, Einheit, Geltungszeit und Rückwirkung führen. Historische Preise als datierte Fakten schützen; funktionsbezogene Bedienung wie WP-Offset im WP-Bereich belassen. Keine unterschiedlichen Helfer für dieselbe globale Größe einführen.
+
+## Optionaler lokaler Systemwächter
+
+Nach [Fachdatei 16](16-systemwaechter.md) zunächst eine Woche nur wesentliche anhaltende Fehler prüfen und an einen separat freigegebenen Empfänger melden. Datenfrische, geplante Auszeiten und Meldungsbegrenzung berücksichtigen. Keine automatische Reparatur, keine externe KI-Auswertung. Zusätzlicher Mac-KI-Bot vorerst zurückgestellt.

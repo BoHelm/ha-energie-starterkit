@@ -16,7 +16,7 @@ EXPECTED = {
         '04-berechnungen', '05-datenqualitaet', '06-abnahme',
         '07-datenschutz', '08-betrieb', '09-status-und-grenzen', '10-referenzarchitektur', '11-wp-offsetsteuerung',
         '12-minutenhistorie-und-betrieb', '13-co2-stunden-und-speicher', '14-openmeteo-vergleich',
-        '15-netzausfall-und-wiederanlauf')},
+        '15-netzausfall-und-wiederanlauf', '16-systemwaechter')},
 }
 PATTERNS = {
     'email': r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b',

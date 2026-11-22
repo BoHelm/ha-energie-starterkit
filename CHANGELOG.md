@@ -1,5 +1,11 @@
 # Änderungen der Spezifikation
 
+## 2026-11-22
+
+- [Lokalen Systemwächter](docs/16-systemwaechter.md) ergänzt: tatsächliche Empfangsfrische, physische Gerätegruppen, geplante NAS-Auszeiten, Mindestdauer, persistente Meldungsbegrenzung und stabile Entwarnung.
+- Einwöchiger reiner Prüfmodus, einzeln freigegebener Empfänger, keine automatischen Reparaturen und unveränderte Schutzfunktionen. Speicher- und Datenschutzgrenzen sowie getrennte Abnahme beschrieben.
+- Zusätzlichen Mac-KI-Bot wegen nicht bestätigter technischer Abschottung vorerst zurückgestellt; kein aktiver KI-Auftrag oder neuer allgemeiner HA-Zugang. Keine private Konfiguration veröffentlicht.
+
 ## 2026-11-20
 
 - [Netzausfall und Wiederanlauf](docs/15-netzausfall-und-wiederanlauf.md): optionale Verzögerung der Batterie-Nachladung ausschließlich über separat freigegebene Programm-SoC. Fallenden Ist-SoC vor Netzrückkehr nachführen, Untergrenze schützen und saisonale Reserve anschließend wiederherstellen.

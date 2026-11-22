@@ -27,3 +27,7 @@ Der Master-Prompt muss gemeinsam mit allen Fachdateien im Ordner `docs` und der 
 ## Weiterentwicklung
 
 Erst je Anlage verlässliche Quellenbasis, dann Darstellung und Tagesabschlüsse, anschließend Modelle. Steuerungen benötigen einen eigenen Auftrag mit klaren Grenzen. Probleme reproduzierbar mit synthetischen Daten und ohne private Diagnosepakete beschreiben. Erkenntnisse zu einer konkreten Anlage bleiben in deren privater Dokumentation.
+
+## Lokaler Wächter und zusätzliche KI-Auswertung
+
+Der [lokale Systemwächter](16-systemwaechter.md) ist eine regelbasierte Diagnosefunktion. Er erkennt definierte Fehlerbilder, nicht beliebige Konzept- oder Rechenfehler. Er kann einen vollständigen Ausfall seines eigenen HA-Hosts nicht unabhängig melden. Eine zusätzliche KI-Auswertung auf einem persönlichen Mac ist vorerst aus Sicherheitsgründen zurückgestellt, weil die erforderliche technische Isolation nicht bestätigt ist. Prompt-Anweisungen ersetzen keine Zugriffsbeschränkung. Es wird kein solcher KI-Auftrag eingerichtet.

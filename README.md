@@ -66,3 +66,7 @@ Nur synthetische Beispiele einstellen. Keine vollständigen HA-Diagnosen, Datenb
 Lizenz der neu verfassten Texte und Vorlagen: [MIT](LICENSE). Externe Integrationen, Karten und Herstellerunterlagen behalten ihre eigenen Lizenzen; sie werden nicht mitgeliefert.
 
 Aktueller Dokumentationsstand und Erweiterungen: [Änderungsübersicht](CHANGELOG.md). Neue Fachdateien gehören zum vollständigen KI-Arbeitsauftrag.
+
+## Lokaler Systemwächter
+
+[Systemwächter im einwöchigen Prüfmodus](docs/16-systemwaechter.md): wesentliche Ausfälle erkennen, Meldungen begrenzen und ohne automatische Reparaturen benachrichtigen. Ein zusätzlicher KI-Bot auf dem persönlichen Rechner bleibt bis zu nachgewiesener technischer Abschottung zurückgestellt.
